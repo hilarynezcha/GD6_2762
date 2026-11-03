@@ -27,3 +27,12 @@ Route::get('/konser/{id}', function ($id) use ($daftarkonser) {
 })->whereNumber('id')->name('konser.detail');
 
 Route::view('/tentang', 'about')->name('tentang');
+
+Route::get('/konser/kota/{kota}', function ($kota) use ($daftarkonser) {
+    $hasil = collect($daftarkonser)->where('kota', ucfirst($kota));
+    
+    return view('konser', [
+        'daftarkonser' => $hasil,
+        'judul' => 'Konser di ' . ucfirst($kota)
+    ]);
+})->whereAlpha('kota')->name('konser.kota');
