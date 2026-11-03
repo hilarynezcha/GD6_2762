@@ -36,3 +36,5 @@ Route::get('/konser/kota/{kota}', function ($kota) use ($daftarkonser) {
         'judul' => 'Konser di ' . ucfirst($kota)
     ]);
 })->whereAlpha('kota')->name('konser.kota');
+
+Route::view('/kontak', 'kontak')->name('kontak');
