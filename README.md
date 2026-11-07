@@ -7,3 +7,6 @@ Modul ini cukup memakai php artisan serve karena CSS dan gambar dipanggil langsu
 PHP: 8.5
 Composer: 2.8
 Laravel Installer: 5.11
+
+## Jawaban pertanyaan seeder
+Karena perintah fresh itu menghapus semua tabel dulu sebelum bikin dan ngisi ulang datanya
