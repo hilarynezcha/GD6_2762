@@ -8,6 +8,11 @@
             <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('konser.*') ? 'active' : '' }}" href="{{ route('konser.index') }}">Konser</a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('promotor.*') ? 'active' : '' }}" href="{{ route('promotor.index') }}">Promotor</a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('tentang') ? 'active' : '' }}" href="{{ route('tentang') }}">Tentang</a>
             </li>
