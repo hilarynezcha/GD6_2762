@@ -7,6 +7,17 @@
     <h1 class="mb-0">Daftar Konser</h1>
     <a href="{{ route('konser.create') }}" class="btn btn-success">Tambah Konser</a>
 </div>
+
+<form action="{{ route('konser.index') }}" method="GET" class="mb-3 d-flex gap-2">
+    <select name="kota" class="form-select w-auto">
+        <option value="">Semua kota</option>
+        @foreach ($daftarKota as $kota)
+            <option value="{{ $kota }}" @selected(request('kota') == $kota)>{{ $kota }}</option>
+        @endforeach
+    </select>
+    <button type="submit" class="btn btn-secondary">Filter</button>
+</form>
+
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
@@ -49,9 +60,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                 </form>
-                
             </td>
-            
         </tr>
         @empty
         <tr>
