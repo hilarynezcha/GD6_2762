@@ -1,24 +1,30 @@
-<?php 
-  
-namespace App\Models; 
-  
-use Illuminate\Database\Eloquent\Model; 
-use Illuminate\Database\Eloquent\Relations\BelongsTo; 
-  
-class Konser extends Model 
-{ 
-    protected $fillable = [                               
-        'promotor_id', 
-        'nama', 
-        'kota', 
-        'harga', 
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany; // BARU
+
+class Konser extends Model
+{
+    protected $fillable = [
+        'promotor_id',
+        'nama',
+        'kota',
+        'harga',
         'sisa',
         'tanggal',
         'deskripsi',
-    ]; 
-  
-    public function promotor(): BelongsTo 
-    { 
-        return $this->belongsTo(Promotor::class); 
-    } 
-} 
+    ];
+
+    public function promotor(): BelongsTo
+    {
+        return $this->belongsTo(Promotor::class);
+    }
+
+    public function pesanans(): HasMany 
+    {
+        return $this->hasMany(Pesanan::class); 
+    }
+}
